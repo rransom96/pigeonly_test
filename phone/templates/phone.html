@@ -1,0 +1,26 @@
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% bootstrap_messages %}
+<div class="container">
+    <div class="mx-auto" style="width: 300px;">
+        <h1 class="title">
+            Enter Some Text
+        </h1>
+    </div>
+    <form method="post">{% csrf_token %}
+        {% bootstrap_form form %}
+            {% buttons %}
+                <button type="submit" class="btn btn-primary">
+                    Submit
+                </button>
+            {% endbuttons %}
+    </form>
+    <ul>
+        {% for p in phone %}
+            <li>
+                {{ p }}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
